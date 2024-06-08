@@ -3,7 +3,7 @@
   result: Fulton1
   completetime: 1
   materials:
-    Steel: 200
+    Steel: 100 #SDKL
     Cloth: 100
 
 - type: latheRecipe

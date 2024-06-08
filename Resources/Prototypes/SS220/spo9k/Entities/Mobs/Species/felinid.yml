@@ -106,6 +106,9 @@
   #MEOW LESS OK THX
   - type: Emoting
     chatEmoteCooldown: 5.0
+  - type: Item #SDKL
+    size: Normal
+  - type: CanEscapeInventory #SDKL
 
 - type: entity
   save: false

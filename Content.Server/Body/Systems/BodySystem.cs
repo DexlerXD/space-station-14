@@ -1,6 +1,7 @@
 using Content.Server.Body.Components;
 using Content.Server.GameTicking;
 using Content.Server.Humanoid;
+using Content.Server.Kitchen.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems;
@@ -29,7 +30,19 @@ public sealed class BodySystem : SharedBodySystem
 
         SubscribeLocalEvent<BodyComponent, MoveInputEvent>(OnRelayMoveInput);
         SubscribeLocalEvent<BodyComponent, ApplyMetabolicMultiplierEvent>(OnApplyMetabolicMultiplier);
+        SubscribeLocalEvent<BodyComponent, BeingMicrowavedEvent>(OnMicrowaved);
     }
+
+    //SDKL begin
+    private void OnMicrowaved(Entity<BodyComponent> ent, ref BeingMicrowavedEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        GibBody(ent, true, ent.Comp, true, null, 10f);
+        args.Handled = true;
+    }
+    //SDKL end
 
     private void OnRelayMoveInput(Entity<BodyComponent> ent, ref MoveInputEvent args)
     {
