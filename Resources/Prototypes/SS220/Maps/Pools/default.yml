@@ -3,6 +3,4 @@
 - type: gameMapPool
   id: SS220MapPool
   maps:
-  - Frankenstein
-  - Nox
-  - Axioma
+  - Heirloom
