@@ -1,7 +1,7 @@
 - type: entity
   id: ThermalVisorImplanter
   name: Thermal-Visor Implanter
-  desc: Thermal-Visor right in your brain!
+  description: Thermal-Visor right in your brain!
   parent: BaseImplantOnlyImplanterSyndi
   components:
     - type: Implanter
